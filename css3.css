@@ -1,0 +1,75 @@
+h1 {
+  font-weight: 800;
+  color : gray;
+}
+p {
+  color: orange;
+}
+#website-title {
+  padding: 10px;
+}
+.menu {
+  margin: 5em;
+}
+button:hover {
+  background-color: #FFECB3;
+}
+
+<style type="text/css" media="screen">
+selector { property: value;}
+</style>
+
+<link href="mystyles.css" rel="stylesheet" type="text/css" media="screen">
+
+<tag style="color:orange; background:color;">isi tag</tag>
+
+@import "otherfile.css";
+
+/* semua paragraf */
+p {
+  color:orange;
+}
+
+/* paragraf di dalam div */
+div p {
+  background-color: coral;
+}
+
+<img id="logo" class="gambar kecil" src="logo.png">
+
+img {
+  width: 100px;
+}
+#logo {
+  background-color: white;
+}
+.gambar {
+  border: 1px solid black;
+}
+.gambar.kecil {
+  width: 50px;
+}
+
+h1 {
+  font-size: 20px;
+  transition: all 1s;
+}
+h1:hover {
+  font-size: 30px;
+}
+
+h1 {
+  transition: all 1s;
+}
+h1:hover {
+  transform: scale(1,2) skew(-15deg);
+}
+
+@keyframes resize {
+  0% { padding: 0; }
+  50% { padding: 0 10px; }
+  100% { padding: 0 30px; }
+}
+h1 {
+  animation: resize 1s alternate infinite ease-in-out;
+}
