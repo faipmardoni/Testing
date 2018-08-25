@@ -4,7 +4,12 @@ const cheerio = require('cheerio');
 let downloadLink;
 let zippyURL;
 let urls = [
-    'https://www.samehadaku.tv/2018/08/island-episode-8-subtitle-indonesia.html'
+	'https://www.kurogaze.top/happy-sugar-life-episode-7-subtitle-indonesia/',
+	'https://www.kurogaze.top/grand-blue-episode-7-subtitle-indonesia/',
+	'https://www.kurogaze.top/tenrou-sirius-the-jaeger-episode-7-subtitle-indonesia/',
+	'https://www.kurogaze.top/chio-chan-no-tsuugakuro-episode-8-subtitle-indonesia/',
+	'https://www.kurogaze.top/harukana-receive-episode-8-subtitle-indonesia/',
+	'https://www.kurogaze.top/satsuriku-no-tenshi-episode-8-subtitle-indonesia/'
 ];
 
 let scrape = async (params) => {
@@ -15,7 +20,7 @@ let scrape = async (params) => {
 
     for (let p of params) {
         await page.setJavaScriptEnabled(false)
-        await page.goto(p);
+        await page.goto(p, { timeout: 0, waitUntil: 'domcontentloaded' });
         const domain = extractRootDomain(p);
         switch (domain) {
             case "kurogaze.top":
