@@ -15,7 +15,7 @@ let scrape = async (params) => {
 
     for (let p of params) {
         await page.setJavaScriptEnabled(false)
-        await page.goto(p);
+        await page.goto(p, { timeout: 0, waitUntil: 'domcontentloaded' });
         const domain = extractRootDomain(p);
         switch (domain) {
             case "kurogaze.top":
