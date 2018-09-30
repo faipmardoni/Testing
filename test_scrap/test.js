@@ -4,7 +4,7 @@ const cheerio = require('cheerio');
 let downloadLink;
 let zippyURL;
 let urls = [
-    'https://www.samehadaku.tv/2018/08/island-episode-8-subtitle-indonesia.html'
+    'https://www.kurogaze.top/kakuriyo-no-yadomeshi-episode-26-tamat-subtitle-indonesia/'
 ];
 
 let scrape = async (params) => {
@@ -31,8 +31,9 @@ let scrape = async (params) => {
                 });
                 for (let d of downloadLink) {
                     var lastURL = d.split('?r=')[1];
+                    if (!lastURL) lastURL = d.split('?site=')[1];
                     var oriURL = base64_decode(lastURL);
-                    if (oriURL.includes('zippy')) linkZippy.push(oriURL);
+                    if (oriURL && oriURL.includes('zippyshare')) linkZippy.push(oriURL);
                 }
                 break;
             case "samehadaku.tv":
@@ -68,6 +69,7 @@ let scrape = async (params) => {
 
 scrape(urls).then(res => {
     res.forEach(r => {
+        console.log(r);
         get_ddl_zippy(r);
     })
 })
