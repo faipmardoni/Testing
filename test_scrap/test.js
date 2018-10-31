@@ -4,12 +4,7 @@ const cheerio = require('cheerio');
 let downloadLink;
 let zippyURL;
 let urls = [
-	'https://www.kurogaze.top/happy-sugar-life-episode-7-subtitle-indonesia/',
-	'https://www.kurogaze.top/grand-blue-episode-7-subtitle-indonesia/',
-	'https://www.kurogaze.top/tenrou-sirius-the-jaeger-episode-7-subtitle-indonesia/',
-	'https://www.kurogaze.top/chio-chan-no-tsuugakuro-episode-8-subtitle-indonesia/',
-	'https://www.kurogaze.top/harukana-receive-episode-8-subtitle-indonesia/',
-	'https://www.kurogaze.top/satsuriku-no-tenshi-episode-8-subtitle-indonesia/'
+	'https://www.kurogaze.top/black-clover-episode-48-subtitle-indonesia/'	
 ];
 
 let scrape = async (params) => {
