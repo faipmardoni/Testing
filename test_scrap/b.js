@@ -3,7 +3,7 @@ const cheerio = require('cheerio');
 const low = require('lowdb');
 const FileSync = require('lowdb/adapters/FileSync')
 
-const adapter = new FileSync('wp.json')
+const adapter = new FileSync('postId.json')
 const db = low(adapter)
 
 db.defaults({ posts: [], user: {} }).write()
@@ -64,7 +64,7 @@ const scrape = async (id) => {
   }
 }
 
-urls = ['1Pcr','wj8','Ynh','Yte','wja','Zac','1otS','1PbB','wjd','Z9s','Yta','1Par','1P9M','1mF2','2EKt','1OwB','1P8p','1P8y','1PaK','Yng','Yvc','1P9I','1PdG','Yum','Z9w','Yni','1Owt','2EKd','X07','1Otu','1PdE','1osx','1Oty','Z3v','Yva','2EKv','1Oax','Yo7','Yuj','1P8r','X05','Ysw','Z3t','1Otp','Yso','Yt2','1PbE','Zaa','Z7d','1Pcs','Zdp','1PeE','Yue','Z7b','1Pcq','Yri','1Ouo','1Pbz','Yuh','Yrj','Yt9','Yob','Ytf','Yvf','Ytd','Yt7','Ytb','1P9N','1P9A','Yo8','1OuN','wjb','1PeC','Yt5','1P8z','wj9','1PaL','1Ott','1Otz','Yuf','1P9E','Yun','1Pbo','1OwC','1P9J','1MY2','Z9x','1Oay','1P8x','Z82','1phx','Ytq','Z9t','1Otx','Yo6','Yt1','Yud','Yvg','1P8u','Ysp','1Ows','1ovG','Yve','Yss','Z9r','Yt3','Ytp','1PaJ','1PbD','Ysn','1Owu','Zdq','1otR','1P9H','Z3q','wj6','Ysr','1P9L','1Oup','Z6a','Yrh','Z9v','1PbF','Ysx','1PbC','1Opr','Ysv','1PdB','Yoc','wj5','1MY3','1Oaw','Ysz','Yoa','1Otv','1P9B','Z83','X08','Z66','1PdH','wj7','Yul','Zdo','wjg','2EKg','Z6b','Z81','Ynj','1Pas','Ytr','1P9F','Z3r','1Pbp','Zad','Yvd','Z69','2EKw','Z65','1P8s','1P8v','Z80','Z9z','1P9z','1P9D','1Pis','1phw','Yvh','1mF3','1P8A','Yuk','Z3w','1Oaz','1Ouq','Yuc','Z3p','1PeF','Ytg','Yug','Z67','1PaM','1Pct','1PdA','1PdC','wjc','wj4','1osG','Yst','Yt0','Yt8','1OwD','1P8t','Z9y','Zdr','Yod','1osy','Ysq','Yt4','Ytc','Yts','Z7e','Z84','Z9u','Yo9','Yrk','Z3s','Z68','1P9K','1Pbq','1PbG']
+urls = ['2DR0','33Iz','33RT','Xri','Xc8','34VD','Xc7','2EY5','WkK','33Iy','1NE6','2DR2','2EQg','34VC','33Ix','33SH','2EQf','2EK6','34VB','Xc6','WkI','34My','1myF','34TG','2EQh','1NE5','1NQ1','2DOu','33SG','WkH','WkD','2CXu','WMh','34TF','X2k','2EVm','2cPz','Wyb','2DOr','1Nzr','1Nqu','WkL','1myE','Xgv','2EY4','2EK5','34VG','1O0M','2ESc','Xsb','33SF','X16','1NeE','Xlt','1ND4','2EVl','2CPH','X24','wjq','1NzF','1Ovu','Xl5','Ynd','2E00','2DOj','2DR4','1Nwt','2DXd','2dEi','34XS','2EYp','2CRv','2EKm','Xgq','Ydd','1Ntp','X0v','34Ry','Y06','34Mx','2EK7','2EQo','Y1s','1OR6','WM4','2EYc','Xco','2EKa','2ETa','Xox','34WE','WTj','1OhH','34Mz','2DOv','Y5s','2EZn','X2j','2EZv','351z']
 async function processArray(urls) {
   for (let i in urls) {
     console.log(`process ke-${i} dari ${(urls.length)}`)
